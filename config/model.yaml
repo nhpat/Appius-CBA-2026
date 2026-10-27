@@ -1,0 +1,67 @@
+# Fit model settings. Mirrors the "Fit Model" tab of the kickoff workbook.
+# Change a number here, re-run `python -m prospector score --client <id>`,
+# and log the change and the reason in docs/MODEL_CHANGELOG.md.
+
+weights:            # points out of 100; must add to 100
+  mission: 30
+  geography: 20
+  size: 15
+  peer: 15
+  openness: 10
+  activity: 10
+
+window_years: 3     # score on the latest N tax years in the data
+
+hard_filters:
+  min_avg_annual_giving: 250000      # raised from 50K (Adam, 2026-09-24)
+  max_years_since_filing: 3
+  require_primary_state_grant: true
+  drop_preselected_only: false       # kept, scored low on openness
+  drop_oversized: false              # size is NOT a hard filter (Adam, 2026-09-24)
+
+tiers:              # minimum score for each tier, checked top down
+  A: 70
+  B: 55
+  C: 40
+  Watch: 0
+
+mission:
+  in_state_min_grants: 3      # use in-state grants only when there are at least this many
+  vague_neutral: 0.25         # value given to "general support" lines with no NTEE code
+  vague_flag_share: 0.5       # flag when more than this share of dollars is vague
+
+geography:
+  parts: {state: 0.60, region: 0.25, rural: 0.15}
+  state_full_share: 0.50      # full state credit when 50% of dollars go to primary states
+  region_full_share: 0.20     # full region credit at 20% of dollars to focus counties
+  rural_full_share: 0.30      # full rural credit at 30% of dollars to rural ZIPs
+  rural_missing_value: 0.5    # used when most dollars have no RUCA code
+  rural_ruca_min: 4           # RUCA 4 to 10 counts as rural (USDA ERS). Not the HRSA definition.
+
+size:
+  parts: {grant: 0.60, grantee: 0.40}
+  grantee_multiple: 10        # grantee revenue compared with 10x the client's capacity budget
+  grantee_missing_value: 0.5
+
+peer:
+  one_match: 0.5
+  two_plus: 1.0
+  fuzzy_threshold: 90
+
+openness:
+  preselected_value: 0.1
+  base: 0.5
+  application_bonus: 0.25
+  new_grantee_bonus: 0.25
+  new_grantee_full_rate: 0.30
+  single_year_assumed_rate: 0.30
+
+activity:
+  parts: {level: 0.60, trend: 0.20, recency: 0.20}
+  level_full_giving: 2000000   # sqrt(avg annual giving / $2M), capped at 1
+  trend_ratio: 0.8             # latest year at least 80% of prior average
+
+matching:
+  fuzzy_threshold: 90          # 0 to 100 name similarity needed for a fuzzy BMF match
+
+lobbying_keywords: [lobby, lobbying, political, legislat, "influence legislation", "political campaign", advocacy]

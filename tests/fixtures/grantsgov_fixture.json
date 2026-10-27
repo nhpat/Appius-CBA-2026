@@ -1,0 +1,78 @@
+[
+ {
+  "errorcode": 0,
+  "data": {
+   "hitCount": 2,
+   "oppHits": [
+    {
+     "id": "350001",
+     "number": "HRSA-27-001",
+     "title": "Public Health Infrastructure Workforce (synthetic)",
+     "agencyCode": "HHS-HRSA",
+     "agency": "Health Resources and Services Administration",
+     "openDate": "10/01/2026",
+     "closeDate": "01/15/2027",
+     "oppStatus": "posted",
+     "alnist": [
+      "93.000"
+     ]
+    },
+    {
+     "id": "350002",
+     "number": "CDC-RFA-27-002",
+     "title": "Community Health Training Centers (synthetic)",
+     "agencyCode": "HHS-CDC",
+     "agency": "Centers for Disease Control and Prevention",
+     "openDate": "",
+     "closeDate": "",
+     "oppStatus": "forecasted",
+     "alnist": [
+      "93.001"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "errorcode": 0,
+  "data": {
+   "hitCount": 1,
+   "oppHits": [
+    {
+     "id": "350001",
+     "number": "HRSA-27-001",
+     "title": "Public Health Infrastructure Workforce (synthetic)",
+     "agencyCode": "HHS-HRSA",
+     "agency": "Health Resources and Services Administration",
+     "openDate": "10/01/2026",
+     "closeDate": "01/15/2027",
+     "oppStatus": "posted",
+     "alnist": [
+      "93.000"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "errorcode": 0,
+  "data": {
+   "hitCount": 1,
+   "oppHits": [
+    {
+     "id": "350003",
+     "number": "HRSA-27-003",
+     "title": "Rural Communities Opioid Response (synthetic)",
+     "agencyCode": "HHS-HRSA",
+     "agency": "Health Resources and Services Administration",
+     "openDate": "11/01/2026",
+     "closeDate": "02/28/2027",
+     "oppStatus": "posted",
+     "alnist": [
+      "93.002"
+     ]
+    }
+   ]
+  }
+ }
+]

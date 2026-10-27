@@ -1,0 +1,54 @@
+# New York State Public Health Association. Mirrors the "Client Intake" tab.
+# NYSPHA is an Appius prospect and partner. Do NOT contact NYSPHA staff.
+# Outputs go to Adam only.
+
+id: nyspha
+name: New York State Public Health Association
+ein: "146017870"
+mode: seek                      # seek = find funders for this organization
+entity_type: 501(c)(3) public charity
+
+latest_revenue: 144566          # 2023 Form 990-EZ. Update when 2024 data posts.
+capacity_budget: 1000000        # what NYSPHA can take on with Appius managing grants
+ask_band: {low: 50000, high: 500000}
+
+primary_states: [NY]
+secondary_states: [NJ, PA, CT, MA, VT]
+focus_counties: []              # statewide; region part folds into state
+secondary_counties: []
+
+theme_weights:
+  public_health: 1.0
+  health_workforce: 0.7
+  behavioral_health: 0.6
+  civic_capacity: 0.6
+  rural_health: 0.5
+  substance_use: 0.4
+
+flag_lobbying: true             # NYSPHA does policy advocacy
+
+peers:
+  - New York State Association of County Health Officials
+  - Public Health Association of New York City
+  - New York State Association for Rural Health
+  - American Public Health Association
+  - Massachusetts Public Health Association
+  - Pennsylvania Public Health Association
+  - New Jersey Public Health Association
+  - Connecticut Public Health Association
+  - Schuyler Center for Analysis and Advocacy
+  - Healthy Capital District
+  - Common Ground Health
+  - Public Health Solutions
+
+validation_seeds:               # funders the model SHOULD rank well. Never used to score.
+  - New York Health Foundation
+  - Health Foundation for Western and Central New York
+  - de Beaumont Foundation
+  - Robert Wood Johnson Foundation
+  - Adirondack Foundation
+  - Community Foundation for the Greater Capital Region
+
+grants_gov:
+  keywords: [public health infrastructure, public health workforce, public health training, community health, rural health]
+  alns: []                      # add program numbers (for example 93.xxx) once known

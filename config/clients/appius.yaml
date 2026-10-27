@@ -1,0 +1,81 @@
+# Appius Communications LLC. Mirrors the "Client Intake" tab.
+# Appius is a for-profit, so it runs in business development (bd) mode:
+#   1. funders of Appius's market (to advise clients and build collaborative bids)
+#   2. grantee leads: nonprofits that already win foundation grants (INTERNAL ONLY)
+
+id: appius
+name: Appius Communications LLC
+ein: null
+mode: bd
+entity_type: for-profit LLC
+
+latest_revenue: 1500000         # midpoint of TYPICAL CLIENT budgets, not Appius revenue
+capacity_budget: 3000000
+ask_band: {low: 50000, high: 500000}
+
+primary_states: [NY]
+secondary_states: [PA, VT]
+
+focus_counties:                 # Western NY + Finger Lakes: full region credit
+  - Niagara
+  - Erie
+  - Chautauqua
+  - Cattaraugus
+  - Allegany
+  - Wyoming
+  - Genesee
+  - Orleans
+  - Monroe
+  - Livingston
+  - Ontario
+  - Wayne
+  - Seneca
+  - Yates
+  - Schuyler
+  - Steuben
+  - Chemung
+  - Tompkins
+  - Cayuga
+  - Cortland
+  - Tioga
+secondary_counties: upstate     # every NY county except NYC, Nassau, Suffolk, Westchester, Rockland
+
+theme_weights:
+  substance_use: 1.0
+  behavioral_health: 1.0
+  rural_health: 0.9
+  agriculture: 0.8
+  human_services: 0.6
+  health_workforce: 0.5
+
+flag_lobbying: false
+
+peers:
+  - Council on Alcoholism and Substance Abuse of Chemung County
+  - CASA-Trinity
+  - Institute for Human Services
+  - Mental Health Association in Tompkins County
+  - Rural Minds
+  - New York State Agricultural Mediation Program
+  - New York State Association for Rural Health
+
+validation_seeds:
+  - Peter and Elizabeth C. Tower Foundation
+  - Health Foundation for Western and Central New York
+  - Mother Cabrini Health Foundation
+  - John R. Oishei Foundation
+  - Ralph C. Wilson Jr. Foundation
+  - Park Foundation
+  - Community Foundation of the Southern Finger Lakes
+  - Community Foundation of Tompkins County
+
+grantee_leads:                  # INTERNAL sales material. Never share outside Appius.
+  min_revenue: 250000
+  max_revenue: 10000000
+  min_foundation_grants: 2
+  region: upstate
+  themes: [substance_use, behavioral_health, rural_health, agriculture, human_services]
+
+grants_gov:
+  keywords: [rural communities opioid response, substance use disorder, behavioral health rural, rural health network, farm stress, agricultural mediation]
+  alns: []
