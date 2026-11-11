@@ -1,0 +1,241 @@
+id,gold_themes,generic_purpose,note
+1,,N,arts education for children
+2,,N,religious education
+3,public_health,N,global health equity org
+4,,N,
+5,,N,
+6,,Y,
+7,,Y,academic medical center; boilerplate purpose
+8,,Y,
+9,,Y,
+10,civic_capacity,N,nonprofit learning conference
+11,,Y,
+12,,Y,
+13,,Y,
+14,civic_capacity,N,civil rights
+15,,Y,medical research
+16,,Y,hospital/clinic system
+17,,Y,
+18,,N,generic scholarship
+19,human_services,N,disability day services
+20,,N,nursing home equipment; not workforce
+21,,Y,
+22,,N,
+23,,Y,
+24,,Y,
+25,,N,generic scholarship
+26,,N,generic scholarship
+27,,Y,
+28,,N,employee award
+29,,N,ambiguous youth/green program
+30,,N,
+31,,Y,
+32,,N,
+33,,N,
+34,human_services,N,
+35,human_services,Y,disability services (Down syndrome)
+36,health_workforce,N,scholarship at a medical university
+37,,Y,
+38,,Y,
+39,human_services,Y,service dogs for veterans
+40,,Y,hospital
+41,public_health,Y,free community clinic
+42,,Y,
+43,human_services,Y,United Way
+44,,Y,
+45,,N,generic scholarship
+46,,Y,disease research
+47,,Y,hospital
+48,,N,cancer research
+49,,Y,
+50,,Y,
+51,,Y,
+52,,Y,
+53,,Y,
+54,,Y,
+55,,Y,symphony association
+56,,Y,
+57,,Y,
+58,,N,generic scholarship
+59,,N,generic scholarship
+60,,Y,
+61,,N,generic scholarship
+62,,Y,no information
+63,,Y,
+64,,N,generic scholarship
+65,human_services,N,disability services
+66,,Y,
+67,human_services;behavioral_health,Y,homeless youth services; NTEE F30
+68,,N,generic scholarship
+69,,N,
+70,public_health,Y,global health
+71,human_services,Y,
+72,,Y,hospital annual fund
+73,,N,
+74,,N,generic scholarship
+75,agriculture,N,school garden/seed skills
+76,,Y,
+77,,Y,
+78,human_services,Y,youth development
+79,,Y,hospital
+80,,Y,farm animal sanctuary
+81,,Y,
+82,,Y,
+83,human_services,Y,senior services
+84,,Y,
+85,,Y,
+86,,N,
+87,,Y,autism research fundraiser
+88,,Y,
+89,,Y,VA hospital
+90,human_services,Y,youth development
+91,,Y,
+92,,Y,research ethics org
+93,,Y,
+94,,Y,
+95,,Y,
+96,,Y,
+97,,N,
+98,human_services,N,disability residential community
+99,,N,museum youth programming
+100,,N,generic scholarship
+101,,Y,
+102,,Y,
+103,,Y,
+104,,Y,
+105,human_services,N,Arc (developmental disabilities)
+106,,Y,
+107,civic_capacity,Y,civil rights
+108,,Y,
+109,,Y,hospital system
+110,,Y,
+111,,N,generic scholarship
+112,,Y,
+113,,Y,
+114,,Y,
+115,,Y,
+116,,Y,hospital
+117,,Y,disease research
+118,,Y,hospital
+119,behavioral_health,Y,NTEE F33 residential mental health
+120,,Y,
+121,,N,generic scholarship
+122,human_services,Y,soup kitchen
+123,,Y,
+124,,Y,
+125,,N,
+126,,Y,
+127,,N,deaf education
+128,,Y,
+129,human_services,N,housing for disabled veterans
+130,,Y,
+131,,N,generic scholarship
+132,,Y,
+133,,N,museum youth programming
+134,human_services,N,food pantry
+135,human_services,Y,cash transfers to the poor
+136,,Y,
+137,human_services,Y,
+138,,N,generic scholarship
+139,civic_capacity,N,
+140,human_services,Y,youth development
+141,human_services,Y,
+142,human_services,N,
+143,,Y,preschool ("nursery")
+144,,N,
+145,human_services,N,
+146,human_services;public_health,N,healthy food access
+147,,N,
+148,,N,
+149,,Y,veterinary
+150,behavioral_health,Y,
+151,,N,cancer research
+152,public_health,N,community health programs
+153,public_health,N,community health center
+154,human_services,Y,food bank
+155,human_services,Y,youth
+156,human_services,N,
+157,public_health,Y,regional health access org
+158,,Y,hospital
+159,,Y,hospital
+160,human_services,N,I/DD residential + vocational
+161,,N,
+162,,Y,hospital
+163,,Y,
+164,,Y,hospital
+165,human_services,Y,bikur cholim (support for the sick)
+166,,Y,hospital
+167,human_services,Y,
+168,,N,deaf school
+169,human_services,N,family hardship aid
+170,,N,pediatric rehab hospital
+171,human_services,Y,
+172,human_services,N,YMCA
+173,human_services,Y,food shelf
+174,human_services,Y,youth
+175,,N,medical research
+176,behavioral_health;human_services,N,sexual assault counseling
+177,human_services,Y,
+178,,N,
+179,,Y,hospital ($3.5M)
+180,,Y,hospital boilerplate
+181,public_health,Y,chronic disease patient org
+182,,Y,hospital
+183,,Y,hospital
+184,behavioral_health,N,cancer patient counseling/support
+185,,N,
+186,human_services,Y,
+187,human_services,Y,
+188,human_services,Y,
+189,,N,prep school
+190,,Y,hospital
+191,,Y,
+192,,Y,hospital system
+193,,Y,
+194,human_services,Y,Jewish federation (federated human services; same rule as United Way)
+195,human_services,N,
+196,human_services,Y,
+197,,Y,research
+198,,Y,hospital
+199,,Y,
+200,health_workforce,N,clinical simulation/education center
+201,,Y,environmental
+202,,N,AI/workplace research
+203,human_services,Y,vision rehabilitation
+204,human_services,Y,soup kitchen ("recovery kitchen")
+205,,N,film org
+206,,N,
+207,human_services,N,
+208,civic_capacity,Y,immigrant advocacy coalition
+209,,N,
+210,,Y,
+211,,Y,drug discovery research
+212,behavioral_health,N,
+213,human_services,N,food rescue
+214,,Y,unknown org
+215,agriculture,N,
+216,,Y,rehab hospital
+217,agriculture,Y,community farm
+218,human_services,N,after-school program
+219,agriculture,N,
+220,agriculture,Y,working farm/education
+221,human_services,N,
+222,civic_capacity,N,advocacy
+223,human_services,Y,therapeutic riding
+224,,Y,land conservation
+225,,Y,
+226,,N,
+227,agriculture,Y,
+228,behavioral_health,Y,NAMI
+229,human_services,Y,food rescue
+230,human_services,Y,rural ministry (poverty)
+231,,Y,animal sanctuary
+232,,N,
+233,agriculture;human_services,N,youth farm / food access
+234,health_workforce;behavioral_health,N,physician health program
+235,substance_use,Y,drug awareness council
+236,human_services,Y,
+237,,N,
+238,agriculture,N,cooperative extension
+239,,N,camps
+240,human_services,Y,

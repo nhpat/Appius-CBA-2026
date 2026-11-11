@@ -1,0 +1,68 @@
+Taxonomy: config/taxonomy.yaml
+Lines: 100 (Counter({'random': 70, 'targeted': 30}))
+
+Per-theme precision / recall (all strata | random stratum only)
+theme                gold  tp  fp  fn  prec   rec  | gold  prec   rec
+public_health           6   3   1   3  0.75  0.50  |    4  1.00  0.25
+health_workforce        2   2   0   0  1.00  1.00  |    0   -     -  
+behavioral_health       4   4   0   0  1.00  1.00  |    1  1.00  1.00
+substance_use           3   3   0   0  1.00  1.00  |    1  1.00  1.00
+rural_health            0   0   0   0   -     -    |    0   -     -  
+agriculture             1   1   2   0  0.33  1.00  |    0   -     -  
+human_services         22  12   3  10  0.80  0.55  |   16  0.75  0.56
+civic_capacity          5   3   3   2  0.50  0.60  |    4  0.50  0.50
+micro (all themes)     43  28   9  15  0.76  0.65
+Lines where predicted theme set == gold set: 80/100
+
+WRONG tags (false positives) and the rule that fired
+  #h11 human_services     kw "youth"                   | RURAL & MIGRANT MINISTRY               | JUSTICE ORGANIZATION OF YOUTH (JOY) PROGRAM
+  #h12 human_services     kw "child"                   | COTTING SCHOOL FOR HANDICAPPED CHILDRE | TO BENEFIT HANDICAPPED CHILDREN &/RELATED RES
+  #h19 civic_capacity     ntee S99                     | BOTTOM LINE INC                        | GENERAL OPERATING
+  #h29 human_services     ntee P020                    | PEOPLE'S MEDICINE PROJECT - A PROGRAM  | GENERAL HEALTH
+  #h30 civic_capacity     ntee S20                     | BLUES TO GREEN INC                     | ARTS & CULTURE
+  #h71 public_health      kw "public health"           | PEDIATRIC DEVELOPMENT CENTER           | THIS REQUEST IS TO ASSIST US WITH MOVING OUR 
+  #h83 civic_capacity     kw "advocacy"                | WOMEN'S RESOURCE CENTER                | WRC ECONOMIC ADVOCACY & SAFE HOUSING PROGRAM
+  #h86 agriculture        kw "farm"                    | WEIR FARM ART CENTER                   | TO AID THE DONEE ORGANIZATION IN CARRYING OUT
+  #h87 agriculture        kw "farm"                    | STRONGWATER FARM THERAPEUTIC EQUESTRIA | RELIGIOUS, HEALTH,SOCIAL, COMMUNITY OR EDUCAT
+
+  FP count by rule:
+      2  agriculture        kw "farm"
+      1  human_services     kw "youth"
+      1  human_services     kw "child"
+      1  civic_capacity     ntee S99
+      1  human_services     ntee P020
+      1  civic_capacity     ntee S20
+      1  public_health      kw "public health"
+      1  civic_capacity     kw "advocacy"
+
+MISSED tags (false negatives)
+  #h11 civic_capacity     ntee=-      | RURAL & MIGRANT MINISTRY                 | JUSTICE ORGANIZATION OF YOUTH (JOY) PROGRAM
+  #h16 human_services     ntee=-      | NEW HOPE PRC                             | GENERAL SUPPORT
+  #h17 human_services     ntee=-      | THE SALVATION ARMY                       | GENERAL
+  #h27 civic_capacity     ntee=-      | AMNESTY INTERNATIONAL                    | CHARITABLE
+  #h29 public_health      ntee=P020   | PEOPLE'S MEDICINE PROJECT - A PROGRAM OF | GENERAL HEALTH
+  #h43 public_health      ntee=Q300   | VISION FOR THE POOR                      | GENERAL FUND
+  #h45 human_services     ntee=-      | SEE ATTACHED SCHEDULE                    | PROVIDE ASSISTANCE TO FAMILIES
+  #h46 human_services     ntee=J20    | NO LIMITS CAFE                           | CHARITABLE PURPOSE
+  #h52 human_services     ntee=-      | The Welcoming Center                     | Humanitarian
+  #h61 human_services     ntee=E50    | EASTER SEALS MASSACHUSETTS INC           | GENERAL OPERATING
+  #h68 public_health      ntee=-      | DOCTORS WITHOUT BORDERS                  | GENERAL OPERATING BUDGET
+  #h69 human_services     ntee=E50Z   | SOUTHAMPTON FRESH AIR HOME               | GENERAL SUPPORT
+  #h71 human_services     ntee=G96Z   | PEDIATRIC DEVELOPMENT CENTER             | THIS REQUEST IS TO ASSIST US WITH MOVING OUR AGENC
+  #h87 human_services     ntee=E500   | STRONGWATER FARM THERAPEUTIC EQUESTRIAN  | RELIGIOUS, HEALTH,SOCIAL, COMMUNITY OR EDUCATION
+  #h100 human_services     ntee=-      | HAVEN'S HARVEST                          | UNRESTRICTED
+
+is_vague() checks
+  Lines whose purpose is boilerplate (gold): 60
+  (a) boilerplate purpose + no real theme, but tagger added a theme: 2/34
+      #h19 ['civic_capacity'] | BOTTOM LINE INC | GENERAL OPERATING
+      #h86 ['agriculture'] | WEIR FARM ART CENTER | TO AID THE DONEE ORGANIZATION IN CARRYIN
+  (b) boilerplate purpose, no theme, no NTEE -> should be vague (0.25): 17/18 are; NOT vague (scored 0 instead):
+      #h51 "General educational purposes"
+  (c) real-theme lines that fell through as vague: 5/42
+      #h16 ['human_services'] | NEW HOPE PRC | GENERAL SUPPORT
+      #h17 ['human_services'] | THE SALVATION ARMY | GENERAL
+      #h27 ['civic_capacity'] | AMNESTY INTERNATIONAL | CHARITABLE
+      #h68 ['public_health'] | DOCTORS WITHOUT BORDERS | GENERAL OPERATING BUDGET
+      #h100 ['human_services'] | HAVEN'S HARVEST | UNRESTRICTED
+  (d) specific (non-boilerplate) purpose judged vague: 0

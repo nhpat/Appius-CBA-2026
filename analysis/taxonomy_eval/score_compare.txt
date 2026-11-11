@@ -1,0 +1,56 @@
+
+=== nyspha: 165 scored funders
+  tiers v0: {'B': 6, 'C': 36, 'Watch': 123}
+  tiers v1: {'B': 4, 'C': 24, 'Watch': 137}
+  tier moves: {('Watch', 'B'): 1, ('B', 'C'): 1, ('Watch', 'C'): 2, ('B', 'Watch'): 2, ('C', 'Watch'): 15}
+  mean score change -1.42; vague-flagged v0=30 v1=52
+     -21.0   44.2 ->  23.2  Watch W W & LUCRETIA HAFER SCHOLARSHIP TUW          themes v1: 
+     -21.0   57.5 ->  36.5  Watch Leopold Schepp Foundation                     themes v1: 
+     -21.0   53.5 ->  32.5  Watch Dorothy Harrison Egan Foundation              themes v1: 
+     -21.0   27.0 ->   6.0  Watch KEOWN CHARITABLE FOUNDATION                   themes v1: 
+     -21.0   52.3 ->  31.3  Watch EVERETT & MARION MITCHELL FOUNDATION          themes v1: 
+      +7.5   35.3 ->  42.8  C     WINFIELD SCOTT CHARITABLE TRUST XXXXX8002     themes v1: 
+      +7.5   25.1 ->  32.6  Watch HARGROVE HUDSON CHARITABLE TRUST XXXXX8005    themes v1: 
+      +7.5   10.8 ->  18.3  Watch SIDRA FOUNDATION                              themes v1: 
+      +7.5   30.2 ->  37.7  Watch ASNESS FAMILY FOUNDATION                      themes v1: 
+     +30.0   29.5 ->  59.5  B     UNFI FOUNDATION C/O JEFFREY FONTAINE          themes v1: public_health, human_services, agriculture
+  top 10 v1:
+     61.0 B     (v0  60.4)  TRUST UW FOR THE DE KAY FOUNDATION XXXXX1001  public_health, human_services
+     59.5 B     (v0  29.5)  UNFI FOUNDATION C/O JEFFREY FONTAINE          public_health, human_services, agriculture
+     56.0 B     (v0  56.7)  ROCHESTER AREA COMMUNITY FOUNDATION INITIATIV civic_capacity, human_services, behavioral_health
+     55.3 B     (v0  56.7)  THE GOODNESS WEB FOUNDATION                   behavioral_health, civic_capacity
+     52.6 C     (v0  55.8)  ROCHESTER AREA COMMUNITY FOUNDATION           human_services, behavioral_health, civic_capacity
+     50.9 C     (v0  43.4)  THE CUSHMAN FOUNDATION                        
+     48.6 C     (v0  48.6)  BAIS EPHRAIM CHARITABLE FOUNDATION TRUST      
+     48.0 C     (v0  53.8)  SANDS FAMILY SUPPORTING FOUNDATION INC        human_services, civic_capacity
+     47.9 C     (v0  47.9)  THE THOMAS P AND CYNTHIA D SCULCO FOUNDATION  
+     46.9 C     (v0  47.9)  UNITED WAY OF BUFFALO AND ERIE COUNTY         human_services, civic_capacity, behavioral_health
+  validation seeds: [('New York Health Foundation', 'not in data yet'), ('Health Foundation for Western and Central New York', 'not in data yet'), ('de Beaumont Foundation', 'not in data yet'), ('Robert Wood Johnson Foundation', 'not in data yet'), ('Adirondack Foundation', 'not in data yet'), ('Community Foundation for the Greater Capital Region', 'not in data yet')]
+
+=== appius: 165 scored funders
+  tiers v0: {'B': 2, 'C': 25, 'Watch': 138}
+  tiers v1: {'B': 3, 'C': 23, 'Watch': 139}
+  tier moves: {('C', 'B'): 1, ('Watch', 'C'): 5, ('C', 'Watch'): 6}
+  mean score change -0.36; vague-flagged v0=30 v1=52
+     -15.0   34.4 ->  19.4  Watch Dorothy Harrison Egan Foundation              themes v1: 
+     -15.0   34.4 ->  19.4  Watch W W & LUCRETIA HAFER SCHOLARSHIP TUW          themes v1: 
+     -15.0   33.4 ->  18.4  Watch EVERETT & MARION MITCHELL FOUNDATION          themes v1: 
+     -15.0   22.7 ->   7.7  Watch BLANCHARD ARTHUR F TR UAGREE                  themes v1: 
+     -15.0   21.5 ->   6.5  Watch KEOWN CHARITABLE FOUNDATION                   themes v1: 
+      +7.5   10.5 ->  18.0  Watch SIDRA FOUNDATION                              themes v1: 
+      +7.5   25.2 ->  32.7  Watch ASNESS FAMILY FOUNDATION                      themes v1: 
+      +7.7   12.3 ->  20.0  Watch FISHEL FOUNDATION                             themes v1: human_services
+     +10.2   43.9 ->  54.1  C     THE NEW YORK TIMES COMMUNITIES FUND           themes v1: human_services, civic_capacity
+     +13.5   32.8 ->  46.3  C     GEMILUTH CHESSED OF GREATER NEW YORK INC      themes v1: human_services, civic_capacity
+  top 10 v1:
+     60.4 B     (v0  61.4)  THE GOODNESS WEB FOUNDATION                   behavioral_health, civic_capacity
+     58.1 B     (v0  54.3)  UNITED WAY OF BUFFALO AND ERIE COUNTY         human_services, civic_capacity, behavioral_health
+     57.6 B     (v0  57.6)  SAM AND HELGA FELDMAN FOUNDATION              human_services, behavioral_health
+     54.1 C     (v0  43.9)  THE NEW YORK TIMES COMMUNITIES FUND           human_services, civic_capacity
+     52.6 C     (v0  46.2)  SAKS FIFTH AVENUE FOUNDATION                  human_services, behavioral_health, civic_capacity
+     50.7 C     (v0  50.7)  NEW YORK CITY MISSION SOCIETY NO 3            human_services
+     50.1 C     (v0  49.5)  TRUST UW FOR THE DE KAY FOUNDATION XXXXX1001  public_health, human_services
+     49.6 C     (v0  50.0)  WALDRON RISE FOUNDATION INC                   human_services, health_workforce, civic_capacity
+     48.9 C     (v0  50.1)  ROCHESTER AREA COMMUNITY FOUNDATION DEPOSITOR human_services, civic_capacity
+     48.4 C     (v0  50.1)  ROCHESTER AREA COMMUNITY FOUNDATION           human_services, behavioral_health, civic_capacity
+  validation seeds: [('Peter and Elizabeth C. Tower Foundation', 'not in data yet'), ('Health Foundation for Western and Central New York', 'not in data yet'), ('Mother Cabrini Health Foundation', 'not in data yet'), ('John R. Oishei Foundation', 'not in data yet'), ('Ralph C. Wilson Jr. Foundation', 'not in data yet'), ('Park Foundation', 'not in data yet'), ('Community Foundation of the Southern Finger Lakes', 'not in data yet'), ('Community Foundation of Tompkins County', 'not in data yet')]

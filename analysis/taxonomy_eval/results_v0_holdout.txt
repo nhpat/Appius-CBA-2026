@@ -1,0 +1,135 @@
+Taxonomy: analysis/taxonomy_eval/taxonomy_v0.yaml
+Lines: 100 (Counter({'random': 70, 'targeted': 30}))
+
+Per-theme precision / recall (all strata | random stratum only)
+theme                gold  tp  fp  fn  prec   rec  | gold  prec   rec
+public_health           6   2   3   4  0.40  0.33  |    4  0.00  0.00
+health_workforce        2   1  13   1  0.07  0.50  |    0  0.00   -  
+behavioral_health       4   3   0   1  1.00  0.75  |    1  1.00  1.00
+substance_use           3   3   2   0  0.60  1.00  |    1  1.00  1.00
+rural_health            0   0   4   0  0.00   -    |    0  0.00   -  
+agriculture             1   1   5   0  0.17  1.00  |    0   -     -  
+human_services         22   4   3  18  0.57  0.18  |   16  0.50  0.19
+civic_capacity          5   3   6   2  0.33  0.60  |    4  0.29  0.50
+micro (all themes)     43  17  36  26  0.32  0.40
+Lines where predicted theme set == gold set: 47/100
+
+WRONG tags (false positives) and the rule that fired
+  # h1 health_workforce   ntee B420                    | WELLESLEY COLLEGE                      | EDUCATION
+  #h11 human_services     kw "youth"                   | RURAL & MIGRANT MINISTRY               | JUSTICE ORGANIZATION OF YOUTH (JOY) PROGRAM
+  #h11 rural_health       kw "rural"                   | RURAL & MIGRANT MINISTRY               | JUSTICE ORGANIZATION OF YOUTH (JOY) PROGRAM
+  #h12 human_services     kw "child"                   | COTTING SCHOOL FOR HANDICAPPED CHILDRE | TO BENEFIT HANDICAPPED CHILDREN &/RELATED RES
+  #h14 rural_health       ntee E21                     | Hackensack Meridian Health             | Grants to support researchers early stage inn
+  #h18 civic_capacity     kw "association"             | MANDOLIN HERITAGE ASSOCIATION          | TO FURTHER THE ORGANIZATIONS CHARITABLE OBJEC
+  #h19 civic_capacity     ntee S99                     | BOTTOM LINE INC                        | GENERAL OPERATING
+  #h22 health_workforce   ntee B430                    | CORNELL UNIVERSITY                     | GENERAL CHARITABLE OPERATIONS
+  #h29 human_services     ntee P020                    | PEOPLE'S MEDICINE PROJECT - A PROGRAM  | GENERAL HEALTH
+  #h30 civic_capacity     ntee S20                     | BLUES TO GREEN INC                     | ARTS & CULTURE
+  #h33 health_workforce   kw "scholarship"             | Simmons University                     | Scholarship for Allison Beard
+  #h36 rural_health       ntee E220                    | Warren General Hospital                | Charitable Contribution
+  #h37 health_workforce   kw "scholarship"             | S Stoodley                             | Scholarship Grant
+  #h38 public_health      ntee G12                     | MHE Research Foundation                | General Charitable
+  #h40 health_workforce   kw "nurse"                   | UNITED WAY OF WYOMING VALLEY           | NURSE'S PANTRY
+  #h44 health_workforce   ntee B430                    | SYRACUSE UNIVERSITY                    | AWARDED TO 1 STUDENTS FOR
+  #h46 health_workforce   ntee J20                     | NO LIMITS CAFE                         | CHARITABLE PURPOSE
+  #h49 civic_capacity     kw "association"             | METROPOLITAN OPERA ASSOCIATION         | GENERAL SUPPORT
+  #h54 health_workforce   kw "scholarship"             | RONNIE O'BRIEN                         | SCHOLARSHIP
+  #h57 health_workforce   kw "scholarship"             | SPENCER VAN-ETTEN SCHOOL DISTRICT      | SCHOLARSHIP PROGRAM
+  #h59 health_workforce   kw "scholarship"             | LUKE SETTERS C/O PNC BANK NA           | SCHOLARSHIP
+  #h64 civic_capacity     kw "association"             | AMERICAN STRING TEACHERS ASSOCIATION   | TO PROVIDE FINANCIAL ASSISTANCE
+  #h67 public_health      ntee H300                    | FARBER CANCER INSTITUTE                | GENERAL SUPPORT
+  #h71 public_health      kw "public health"           | PEDIATRIC DEVELOPMENT CENTER           | THIS REQUEST IS TO ASSIST US WITH MOVING OUR 
+  #h75 agriculture        kw "farm"                    | Farminton Valley Visiting Nurse Ass    | GENERAL USE
+  #h75 health_workforce   kw "nurse"                   | Farminton Valley Visiting Nurse Ass    | GENERAL USE
+  #h77 agriculture        ntee K30Z                    | CITY HARVEST                           | GENERAL CONTRIBUTION
+  #h81 health_workforce   kw "nurse"                   | VISITING NURSE ASSOC OF NEW YORK       | GENERAL
+  #h82 substance_use      kw "recovery"                | NEW HAZLETT CENTER FOR PERFORMING ARTS | TO SUPPORT ITS NEW RESIDENT COMPANY MODEL AND
+  #h83 civic_capacity     kw "advocacy"                | WOMEN'S RESOURCE CENTER                | WRC ECONOMIC ADVOCACY & SAFE HOUSING PROGRAM
+  #h85 rural_health       kw "rural"                   | CATSKILL WATER DISCOVERY CENTER- HANFO | TO PROMOTE SUSTAINABLE ENERGY PRACTICES IN RU
+  #h86 agriculture        kw "farm"                    | WEIR FARM ART CENTER                   | TO AID THE DONEE ORGANIZATION IN CARRYING OUT
+  #h87 agriculture        kw "farm"                    | STRONGWATER FARM THERAPEUTIC EQUESTRIA | RELIGIOUS, HEALTH,SOCIAL, COMMUNITY OR EDUCAT
+  #h90 agriculture        kw "farm"                    | INDRALOKA ANIMAL SANCTUARY             | FARM ANIMAL THERAPY FOR KIDS
+  #h95 health_workforce   ntee E30                     | COMMUNITY HEALTH CENTER OF CAPE COD    | GENERAL OPERATING
+  #h99 substance_use      kw "sud"                     | SUDBURY VALLEY TRUSTEES INC            | ENVIRONMENTAL PROTECTION
+
+  FP count by rule:
+      5  health_workforce   kw "scholarship"
+      4  agriculture        kw "farm"
+      3  civic_capacity     kw "association"
+      3  health_workforce   kw "nurse"
+      2  rural_health       kw "rural"
+      2  health_workforce   ntee B430
+      1  health_workforce   ntee B420
+      1  human_services     kw "youth"
+      1  human_services     kw "child"
+      1  rural_health       ntee E21
+      1  civic_capacity     ntee S99
+      1  human_services     ntee P020
+      1  civic_capacity     ntee S20
+      1  rural_health       ntee E220
+      1  public_health      ntee G12
+      1  health_workforce   ntee J20
+      1  public_health      ntee H300
+      1  public_health      kw "public health"
+      1  agriculture        ntee K30Z
+      1  substance_use      kw "recovery"
+      1  civic_capacity     kw "advocacy"
+      1  health_workforce   ntee E30
+      1  substance_use      kw "sud"
+
+MISSED tags (false negatives)
+  # h3 human_services     ntee=-      | UJA                                      | GENERAL PURPOSES
+  # h7 human_services     ntee=-      | UJA-FEDERATION OF NEW YORK               | GENERAL SUPPORT
+  # h8 human_services     ntee=-      | HOLY APOSTLES SOUP KITCHEN               | GENERAL SUPPORT
+  #h11 civic_capacity     ntee=-      | RURAL & MIGRANT MINISTRY                 | JUSTICE ORGANIZATION OF YOUTH (JOY) PROGRAM
+  #h15 public_health      ntee=-      | TITUSVILLE AREA HEALTH CENTER FOUNDATION | EXAM TABLES FOR TIONESTA HC
+  #h16 human_services     ntee=-      | NEW HOPE PRC                             | GENERAL SUPPORT
+  #h17 human_services     ntee=-      | THE SALVATION ARMY                       | GENERAL
+  #h25 human_services     ntee=O2EZ   | TIOGA COUNTY BOYS & GIRLS CLUB           | GENERAL USE
+  #h27 civic_capacity     ntee=-      | AMNESTY INTERNATIONAL                    | CHARITABLE
+  #h29 public_health      ntee=P020   | PEOPLE'S MEDICINE PROJECT - A PROGRAM OF | GENERAL HEALTH
+  #h40 human_services     ntee=T70Z   | UNITED WAY OF WYOMING VALLEY             | NURSE'S PANTRY
+  #h43 public_health      ntee=Q300   | VISION FOR THE POOR                      | GENERAL FUND
+  #h45 human_services     ntee=-      | SEE ATTACHED SCHEDULE                    | PROVIDE ASSISTANCE TO FAMILIES
+  #h46 human_services     ntee=J20    | NO LIMITS CAFE                           | CHARITABLE PURPOSE
+  #h52 human_services     ntee=-      | The Welcoming Center                     | Humanitarian
+  #h61 human_services     ntee=E50    | EASTER SEALS MASSACHUSETTS INC           | GENERAL OPERATING
+  #h65 human_services     ntee=O230   | BOYS & GIRLS CLUB SCHENECTADY            | UNRESTRICTED
+  #h68 public_health      ntee=-      | DOCTORS WITHOUT BORDERS                  | GENERAL OPERATING BUDGET
+  #h69 human_services     ntee=E50Z   | SOUTHAMPTON FRESH AIR HOME               | GENERAL SUPPORT
+  #h71 human_services     ntee=G96Z   | PEDIATRIC DEVELOPMENT CENTER             | THIS REQUEST IS TO ASSIST US WITH MOVING OUR AGENC
+  #h76 human_services     ntee=-      | RESCUE 22 FOUNDATION                     | TO OFFER VETERANS THE EXTRA CARE AND SUPPORT THEY 
+  #h77 human_services     ntee=K30Z   | CITY HARVEST                             | GENERAL CONTRIBUTION
+  #h87 human_services     ntee=E500   | STRONGWATER FARM THERAPEUTIC EQUESTRIAN  | RELIGIOUS, HEALTH,SOCIAL, COMMUNITY OR EDUCATION
+  #h88 behavioral_health  ntee=-      | AMERICAN ACADEMY OF PSYCHOANALYSIS       | ADVANCEMENT OF PSYCHOLOGY
+  #h96 health_workforce   ntee=-      | Milford Regional Medical Center          | Physician stipends.
+  #h100 human_services     ntee=-      | HAVEN'S HARVEST                          | UNRESTRICTED
+
+is_vague() checks
+  Lines whose purpose is boilerplate (gold): 60
+  (a) boilerplate purpose + no real theme, but tagger added a theme: 10/34
+      #h18 ['civic_capacity'] | MANDOLIN HERITAGE ASSOCIATION | TO FURTHER THE ORGANIZATIONS CHARITABLE 
+      #h19 ['civic_capacity'] | BOTTOM LINE INC | GENERAL OPERATING
+      #h22 ['health_workforce'] | CORNELL UNIVERSITY | GENERAL CHARITABLE OPERATIONS
+      #h36 ['rural_health'] | Warren General Hospital | Charitable Contribution
+      #h38 ['public_health'] | MHE Research Foundation | General Charitable
+      #h49 ['civic_capacity'] | METROPOLITAN OPERA ASSOCIATION | GENERAL SUPPORT
+      #h67 ['public_health'] | FARBER CANCER INSTITUTE | GENERAL SUPPORT
+      #h75 ['agriculture', 'health_workforce'] | Farminton Valley Visiting Nurse Ass | GENERAL USE
+      #h81 ['health_workforce'] | VISITING NURSE ASSOC OF NEW YORK | GENERAL
+      #h86 ['agriculture'] | WEIR FARM ART CENTER | TO AID THE DONEE ORGANIZATION IN CARRYIN
+  (b) boilerplate purpose, no theme, no NTEE -> should be vague (0.25): 13/18 are; NOT vague (scored 0 instead):
+      #h20 "OPERATIONS"
+      #h32 "OPERATING AND ADMINISTRATIVE EXPENSES"
+      #h47 "Support"
+      #h51 "General educational purposes"
+      #h74 "OPERATIONS"
+  (c) real-theme lines that fell through as vague: 7/42
+      # h3 ['human_services'] | UJA | GENERAL PURPOSES
+      # h7 ['human_services'] | UJA-FEDERATION OF NEW YORK | GENERAL SUPPORT
+      # h8 ['human_services'] | HOLY APOSTLES SOUP KITCHEN | GENERAL SUPPORT
+      #h16 ['human_services'] | NEW HOPE PRC | GENERAL SUPPORT
+      #h27 ['civic_capacity'] | AMNESTY INTERNATIONAL | CHARITABLE
+      #h68 ['public_health'] | DOCTORS WITHOUT BORDERS | GENERAL OPERATING BUDGET
+      #h100 ['human_services'] | HAVEN'S HARVEST | UNRESTRICTED
+  (d) specific (non-boilerplate) purpose judged vague: 0
