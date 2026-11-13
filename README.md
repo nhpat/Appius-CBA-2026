@@ -59,8 +59,11 @@ list. The year in the URL is the IRS **processing** year, not the tax year.
 ## Quarterly refresh (the deliverable Appius runs without you)
 
 ```bash
-python -m prospector refresh --client nyspha appius --zips data/raw/*.zip
+python -m prospector refresh --client nyspha appius --zips 'data/raw/*.zip'
 ```
+
+Quote the `--zips` pattern. On zsh (macOS default), an unquoted glob with no
+matching files aborts the whole command before Python ever runs.
 
 One command: ingest any new zips (amended returns replace originals), re-match
 recipients, score, and write fresh Excel files. Make sure this works for someone who
