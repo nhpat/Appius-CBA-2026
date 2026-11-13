@@ -1,0 +1,46 @@
+# Themes used to judge mission fit. A grant line matches a theme when its
+# purpose text or recipient name contains a keyword, OR the matched recipient's
+# NTEE code starts with one of the listed prefixes.
+# Keywords are matched as lowercase substrings, so "addict" catches "addiction".
+# Hand-label a sample of purpose lines and measure these before trusting them.
+
+generic_purpose:   # lines like these say nothing about mission on their own
+  - general support
+  - general operating
+  - general purpose
+  - general operations
+  - unrestricted
+  - operating support
+  - charitable purposes
+  - charitable
+  - annual fund
+  - annual campaign
+  - to further exempt purpose
+  - exempt purposes
+  - program support
+
+themes:
+  public_health:
+    keywords: [public health, population health, health equity, disease prevention, epidemiolog, immuniz, vaccin, chronic disease, maternal, health department, community health, health promotion, tobacco, obesity, environmental health, climate and health]
+    ntee: [E70, E80, E90, G, H]
+  health_workforce:
+    keywords: [health workforce, workforce, nursing, nurse, residency, fellowship, health career, community health worker, training program, pipeline, scholarship]
+    ntee: [E30, B42, B43, J]
+  behavioral_health:
+    keywords: [mental health, behavioral health, suicide, crisis, counseling, psychiatr, trauma, wellbeing, well-being, peer support]
+    ntee: [F]
+  substance_use:
+    keywords: [substance use, substance abuse, addiction, addict, opioid, overdose, recovery, alcohol, sud , harm reduction, naloxone, narcan, prevention council]
+    ntee: [F20, F21, F22]
+  rural_health:
+    keywords: [rural health, rural hospital, critical access, rural, telehealth, health network, farmworker health]
+    ntee: [E21, E22, E32]
+  agriculture:
+    keywords: [agricultur, farm, farmer, dairy, food system, ranch, agri, cooperative extension, 4-h, mediation program]
+    ntee: [K]
+  human_services:
+    keywords: [human services, family services, youth, child, housing, homeless, food pantry, case management, poverty, community action]
+    ntee: [P, I, L]
+  civic_capacity:
+    keywords: [capacity building, convening, conference, association, coalition, policy, leadership, advocacy, civic, collaborative, technical assistance]
+    ntee: [S, W, R]
