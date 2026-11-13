@@ -1,0 +1,101 @@
+id,gold_themes,generic_purpose,note
+h1,,N,
+h2,,Y,
+h3,human_services,Y,federation
+h4,,N,generic scholarship
+h5,,Y,
+h6,human_services,N,orphaned/abused children
+h7,human_services,Y,federation
+h8,human_services,Y,soup kitchen
+h9,human_services;substance_use,N,
+h10,,Y,
+h11,civic_capacity,N,youth justice organizing
+h12,,N,school for disabled children
+h13,,Y,
+h14,,N,hospital research
+h15,public_health,N,community health center equipment
+h16,human_services,Y,pregnancy resource center
+h17,human_services,Y,
+h18,,Y,
+h19,,Y,college access
+h20,,Y,
+h21,,N,
+h22,,Y,
+h23,civic_capacity,N,policy research/evaluation
+h24,,Y,
+h25,human_services,Y,youth development
+h26,,Y,municipality
+h27,civic_capacity,Y,human rights advocacy
+h28,,Y,
+h29,public_health,N,community health program
+h30,,N,
+h31,,N,
+h32,,Y,
+h33,,N,generic scholarship
+h34,,N,
+h35,,Y,
+h36,,Y,hospital
+h37,,N,generic scholarship
+h38,,Y,disease research
+h39,,Y,university
+h40,human_services,N,pantry
+h41,,Y,
+h42,,Y,
+h43,public_health,Y,global eye care
+h44,,N,
+h45,human_services,N,
+h46,human_services,Y,disability employment
+h47,,Y,service club
+h48,,Y,hospital system
+h49,,Y,
+h50,civic_capacity,Y,worker advocacy
+h51,,Y,
+h52,human_services,Y,immigrant services
+h53,,Y,
+h54,,N,generic scholarship
+h55,human_services,N,
+h56,,Y,
+h57,,N,generic scholarship
+h58,behavioral_health,Y,
+h59,,N,generic scholarship
+h60,,N,
+h61,human_services,Y,disability services
+h62,,Y,school for the blind
+h63,,Y,
+h64,,N,
+h65,human_services,Y,youth development
+h66,,Y,
+h67,,Y,cancer center
+h68,public_health,Y,global health
+h69,human_services,Y,camp for disabled children
+h70,,Y,
+h71,human_services,N,early intervention
+h72,,N,
+h73,,N,
+h74,,Y,pediatric rehab
+h75,,Y,home health agency
+h76,human_services,N,veterans
+h77,human_services,Y,food rescue
+h78,public_health,Y,community health center
+h79,agriculture,Y,community farm
+h80,behavioral_health,N,
+h81,,Y,home health agency
+h82,,N,
+h83,human_services,N,
+h84,,N,
+h85,,N,energy
+h86,,Y,arts
+h87,human_services,Y,therapeutic riding
+h88,behavioral_health,N,
+h89,,Y,rehab hospital
+h90,,N,animal sanctuary
+h91,,N,
+h92,behavioral_health,Y,psychiatry dept
+h93,civic_capacity,Y,
+h94,substance_use,Y,
+h95,public_health,Y,community health center
+h96,health_workforce,N,physician stipends
+h97,health_workforce,N,nurse recognition
+h98,substance_use,Y,
+h99,,N,
+h100,human_services,Y,food rescue

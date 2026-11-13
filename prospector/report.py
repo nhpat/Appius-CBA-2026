@@ -15,8 +15,8 @@ TIER_FILL = {"A": "C6EFCE", "B": "FFEB9C", "C": "FCE4D6", "Watch": "EDEDED"}
 PROSPECT_COLS = [
     ("rank", "Rank", 6), ("tier", "Tier", 6), ("score", "Score", 7), ("name", "Foundation", 38),
     ("ein", "EIN", 11), ("form", "Form", 7), ("city", "City", 14), ("state", "State", 6),
-    ("mission", "Mission (0-1)", 9), ("geography", "Geography", 9), ("size", "Size", 7), ("peer", "Peer", 7),
-    ("openness", "Openness", 9), ("activity", "Activity", 8),
+    ("mission", "Mission (0-1)", 9), ("geography", "Geography (0-1)", 9), ("size", "Size (0-1)", 7),
+    ("peer", "Peer (0-1)", 7), ("openness", "Openness (0-1)", 9), ("activity", "Activity (0-1)", 8),
     ("avg_annual_giving", "Avg annual giving", 14), ("median_grant", "Median grant", 12),
     ("median_grantee_revenue", "Median grantee revenue", 14), ("primary_state_share", "Share to primary state", 10),
     ("focus_county_share", "Share to focus counties", 10), ("rural_share", "Share to rural ZIPs", 10),
@@ -39,6 +39,7 @@ def _sheet(ws, cols, rows, tier_col=None):
         for j, (key, _, _) in enumerate(cols, 1):
             v = r.get(key)
             c = ws.cell(row=i, column=j, value=v)
+            c.alignment = Alignment(wrap_text=True, vertical="top")
             if key in MONEY:
                 c.number_format = '"$"#,##0'
             elif key in PCT:

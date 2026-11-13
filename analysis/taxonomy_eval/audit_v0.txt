@@ -1,0 +1,65 @@
+FULL-DB AUDIT: 7,184 lines to NY+neighbors, $307,977,961 (lines over $100M excluded)
+  dollars scored vague (0.25): 13.4%
+
+  public_health: 140 lines, $3,691,305 (1.2% of dollars). Top rules by $:
+    ntee H30                            9 lines  $       989,500
+    kw "chronic disease"                1 lines  $       660,000
+    kw "community health"               6 lines  $       367,265
+    ntee G81                            1 lines  $       200,000
+    ntee E70                           10 lines  $       163,539
+    ntee H11                            2 lines  $       152,500
+
+  health_workforce: 978 lines, $24,608,047 (8.0% of dollars). Top rules by $:
+    ntee B43                          142 lines  $    11,524,419
+    kw "scholarship"                  712 lines  $     7,306,924
+    ntee B42                           52 lines  $     2,730,071
+    ntee J12                            1 lines  $       713,688
+    kw "fellowship"                    17 lines  $       677,867
+    kw "nursing"                        3 lines  $       478,876
+
+  behavioral_health: 72 lines, $5,952,656 (1.9% of dollars). Top rules by $:
+    kw "mental health"                 15 lines  $     3,044,325
+    kw "suicide"                        3 lines  $     1,120,000
+    ntee F30                           10 lines  $       543,334
+    kw "behavioral health"              6 lines  $       257,729
+    kw "counseling"                     5 lines  $       222,825
+    kw "psychiatr"                      1 lines  $       150,000
+
+  substance_use: 15 lines, $169,543 (0.1% of dollars). Top rules by $:
+    kw "recovery"                       3 lines  $        51,000
+    kw "addiction"                      2 lines  $        45,200
+    kw "sud"                            5 lines  $        37,200
+    kw "alcohol"                        1 lines  $        21,600
+    kw "substance abuse"                1 lines  $        12,543
+    ntee F22                            2 lines  $         1,000
+
+  rural_health: 62 lines, $6,989,354 (2.3% of dollars). Top rules by $:
+    ntee E22                           42 lines  $     5,121,155
+    ntee E21                            7 lines  $     1,513,574
+    kw "health network"                 3 lines  $       217,402
+    kw "rural"                          5 lines  $        93,223
+    ntee E32                            5 lines  $        44,000
+
+  agriculture: 109 lines, $3,870,654 (1.3% of dollars). Top rules by $:
+    ntee K30                           25 lines  $     2,003,074
+    kw "farm"                          34 lines  $       719,578
+    ntee K31                           17 lines  $       309,834
+    ntee K36                            6 lines  $       265,090
+    kw "cooperative extension"          3 lines  $       152,188
+    kw "agricultur"                     5 lines  $       128,000
+
+  human_services: 966 lines, $29,666,043 (9.6% of dollars). Top rules by $:
+    kw "child"                        223 lines  $     8,016,304
+    kw "youth"                        174 lines  $     3,876,131
+    ntee P20                           69 lines  $     3,200,110
+    kw "human services"                64 lines  $     1,751,695
+    ntee P30                           19 lines  $     1,198,134
+    ntee P27                           15 lines  $     1,173,196
+
+  civic_capacity: 333 lines, $11,292,871 (3.7% of dollars). Top rules by $:
+    kw "association"                  134 lines  $     2,368,185
+    kw "policy"                         5 lines  $     1,540,000
+    ntee S50                           11 lines  $     1,176,021
+    ntee S32                            2 lines  $       884,913
+    ntee S20                           22 lines  $       821,618
+    ntee S99                            6 lines  $       463,148

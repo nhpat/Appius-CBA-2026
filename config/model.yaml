@@ -1,5 +1,5 @@
 # Fit model settings. Mirrors the "Fit Model" tab of the kickoff workbook.
-# Change a number here, re-run `python -m prospector score --client <id>`,
+# Change a number here, re-run `python -m prospector report --client <id>`,
 # and log the change and the reason in docs/MODEL_CHANGELOG.md.
 
 weights:            # points out of 100; must add to 100

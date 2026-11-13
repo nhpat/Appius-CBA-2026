@@ -1,46 +1,95 @@
 # Themes used to judge mission fit. A grant line matches a theme when its
 # purpose text or recipient name contains a keyword, OR the matched recipient's
 # NTEE code starts with one of the listed prefixes.
-# Keywords are matched as lowercase substrings, so "addict" catches "addiction".
-# Hand-label a sample of purpose lines and measure these before trusting them.
+#
+# How keywords match (prospector/themes.py):
+#   - Case and punctuation are ignored: "Boys & Girls" reads as "boys girls".
+#   - A keyword must start at the beginning of a word and may run on, so
+#     "addict" catches "addiction" but "ranch" does NOT catch "branch".
+#   - To require the WHOLE word, end the keyword with a space AND quote it:
+#     "sud " (YAML drops an unquoted trailing space).
+#   - `exclude` phrases are blanked out before that theme's keywords are checked.
+#
+# Measured against 340 hand-labeled real grant lines (2025 IRS zip 01A).
+# Method, labels and results: analysis/taxonomy_eval/. Re-run
+#   python analysis/taxonomy_eval/eval_themes.py --set holdout
+# after any change here, and log it in docs/MODEL_CHANGELOG.md.
 
-generic_purpose:   # lines like these say nothing about mission on their own
+generic_purpose:   # a purpose (60 chars or less) containing one of these says nothing about mission
   - general support
   - general operating
   - general purpose
   - general operations
+  - general fund
+  - general use
+  - general contribution
+  - general donation
+  - general grant
   - unrestricted
   - operating support
+  - operating fund
+  - operating budget
+  - operating and administrative
   - charitable purposes
   - charitable
+  - charity
   - annual fund
   - annual campaign
+  - annual operating
   - to further exempt purpose
-  - exempt purposes
+  - exempt purpose
+  - exempt function
+  - exempt organization
   - program support
+  - program services
+  - activities of organization
+  - activities of the organization
+  - purpose designated by
+  - see statement
+  - see attached
+  - see schedule
+
+generic_exact:     # vague only when this is the WHOLE purpose
+  - general
+  - donation
+  - operations
+  - operating
+  - support
+  - contribution
+  - gift
+  - grant
+  - program funding
+  - assist public charities
 
 themes:
   public_health:
-    keywords: [public health, population health, health equity, disease prevention, epidemiolog, immuniz, vaccin, chronic disease, maternal, health department, community health, health promotion, tobacco, obesity, environmental health, climate and health]
-    ntee: [E70, E80, E90, G, H]
+    keywords: [public health, population health, health equity, disease prevention, epidemiolog, immuniz, vaccin, chronic disease, maternal, health department, community health, health promotion, tobacco, obesity, environmental health, climate and health,
+               health center, community clinic, free clinic, global health, healthy food, nutrition]
+    ntee: [E70, E80, E90, E32]      # was also G, H (disease charities, medical research): 0/4 precision
   health_workforce:
-    keywords: [health workforce, workforce, nursing, nurse, residency, fellowship, health career, community health worker, training program, pipeline, scholarship]
-    ntee: [E30, B42, B43, J]
+    keywords: [health workforce, healthcare workforce, health care workforce, nursing school, school of nursing, nursing education, nursing student, nursing scholarship, nurses, nurse practitioner, nurse training,
+               medical school, medical student, "medical education ", medical residency, residency program, health professions, health career, community health worker, clinical training, physician]
+    ntee: []                         # was E30, B42, B43, J: every college and university grant became health workforce
   behavioral_health:
-    keywords: [mental health, behavioral health, suicide, crisis, counseling, psychiatr, trauma, wellbeing, well-being, peer support]
+    keywords: [mental health, mental illness, behavioral health, suicide, crisis, counseling, psychiatr, psycholog, trauma, wellbeing, well being, peer support]
+    exclude: [credit counseling, crisis relief]
     ntee: [F]
   substance_use:
-    keywords: [substance use, substance abuse, addiction, addict, opioid, overdose, recovery, alcohol, sud , harm reduction, naloxone, narcan, prevention council]
+    keywords: [substance use, substance abuse, addiction, addict, opioid, overdose, alcohol, "sud ", harm reduction, naloxone, narcan, prevention council,
+               drug abuse, drug awareness, drug free, drug prevention, recovery center, recovery community, recovery support, recovery services, recovery house, road to recovery, sober]
     ntee: [F20, F21, F22]
   rural_health:
-    keywords: [rural health, rural hospital, critical access, rural, telehealth, health network, farmworker health]
-    ntee: [E21, E22, E32]
+    keywords: [rural health, rural hospital, critical access, telehealth, telemedicine, health network, farmworker health, rural medical, rural clinic]
+    ntee: []                         # was E21, E22, E32: every hospital was tagged rural. Rural dollars are scored in Geography.
   agriculture:
-    keywords: [agricultur, farm, farmer, dairy, food system, ranch, agri, cooperative extension, 4-h, mediation program]
-    ntee: [K]
+    keywords: [agri, "farm ", farms, farmer, farming, farmland, dairy, food system, cooperative extension, 4 h, growers]
+    exclude: [farm animal]
+    ntee: [K2]                       # agriculture programs only; K3x/K4x food programs moved to human_services
   human_services:
-    keywords: [human services, family services, youth, child, housing, homeless, food pantry, case management, poverty, community action]
-    ntee: [P, I, L]
+    keywords: [human services, family services, family service, social services, youth, child, housing, homeless, food pantry, food bank, food shelf, soup kitchen, hunger, needy, case management, poverty, community action,
+               disabilit, visually impaired, elderly, older adults, veteran, united way, jewish federation, "uja ", boys and girls club, boys girls club]
+    exclude: [children s hospital, childrens hospital, hospital for children, children s research hospital, children s museum]
+    ntee: [P, L, O, K3, K4, I7]      # was P, I, L. Added youth development (O), food (K3/K4), abuse prevention (I7)
   civic_capacity:
-    keywords: [capacity building, convening, conference, association, coalition, policy, leadership, advocacy, civic, collaborative, technical assistance]
-    ntee: [S, W, R]
+    keywords: [capacity building, convening, conference, coalition, policy, leadership, advocacy, civic, collaborative, technical assistance, civil rights, civil liberties, human rights, aclu, social justice]
+    ntee: [S, W, R]                  # removed keyword "association": 134 lines, mostly symphony/alumni/nursery associations

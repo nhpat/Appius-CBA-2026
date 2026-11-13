@@ -11,7 +11,9 @@ Typical first run on real data:
   python -m prospector report --client nyspha
 
 Quarterly refresh (Appius can run this without the team):
-  python -m prospector refresh --client nyspha --zips data/raw/*.zip
+  python -m prospector refresh --client nyspha appius --zips 'data/raw/*.zip'
+  (quote the --zips pattern: on zsh, an unquoted glob with no matches aborts
+  before Python even runs)
 
 Offline demo on synthetic data (no downloads):
   python -m prospector demo
@@ -19,6 +21,7 @@ Offline demo on synthetic data (no downloads):
 from __future__ import annotations
 
 import argparse
+import glob
 import json
 import sys
 from pathlib import Path
@@ -142,7 +145,14 @@ def cmd_report(a):
 def cmd_refresh(a):
     """Rebuild a client's list from fresh IRS data: ingest new zips, re-match, score, report."""
     con = db.connect(a.db)
-    for z in a.zips or []:
+    for table in ("bmf", "zip_geo"):
+        if con.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0] == 0:
+            sys.exit(f"'{table}' is empty. Run 'load-reference' first, or use the shared data/prospector.db "
+                     f"-- refusing to score against an empty reference table.")
+    zip_paths = [p for pattern in (a.zips or []) for p in glob.glob(pattern)]
+    if a.zips and not zip_paths:
+        print(f"No zips matched {a.zips!r}; rescoring existing data only.")
+    for z in zip_paths:
         print(Path(z).name, irs.ingest_zip(con, Path(z)))
     model = load_model()
     print(match.run_matching(con, model["matching"]["fuzzy_threshold"]))

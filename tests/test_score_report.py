@@ -42,7 +42,10 @@ def test_size_is_not_a_hard_filter(con):
     p = _by_name(_run(con, "nyspha"))["National Health Research Trust"]
     assert p["median_grant"] > 1_000_000
     assert "oversized_hand_review" in p["flags"] and "restricts_lobbying" in p["flags"]
-    assert p["tier"] in ("A", "B")    # stays on the list; a person reviews it
+    # Stays on the list (not dropped) so a person reviews it. Was ("A", "B") until
+    # 2026-11-11: its B came from NTEE E22 (hospital) being tagged rural_health,
+    # which the taxonomy evaluation showed was wrong. See MODEL_CHANGELOG.md.
+    assert p["tier"] in ("A", "B", "C")
 
 
 def test_preselected_scores_low_on_openness(con):

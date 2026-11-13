@@ -1,0 +1,230 @@
+Taxonomy: analysis/taxonomy_eval/taxonomy_v0.yaml
+Lines: 240 (Counter({'random': 140, 'enriched': 60, 'targeted': 40}))
+
+Per-theme precision / recall (all strata | random stratum only)
+theme                gold  tp  fp  fn  prec   rec  | gold  prec   rec
+public_health           8   0   4   8  0.00  0.00  |    3  0.00  0.00
+health_workforce        3   1  30   2  0.03  0.33  |    1  0.04  1.00
+behavioral_health       8   5   0   3  1.00  0.62  |    2  1.00  1.00
+substance_use           1   0   1   1  0.00  0.00  |    0   -     -  
+rural_health            0   0   7   0  0.00   -    |    0  0.00   -  
+agriculture             8   7  11   1  0.39  0.88  |    1  0.00  0.00
+human_services         54  26  17  28  0.60  0.48  |   19  0.50  0.37
+civic_capacity          6   3   7   3  0.30  0.50  |    4  0.50  0.25
+micro (all themes)     88  42  77  46  0.35  0.48
+Lines where predicted theme set == gold set: 139/240
+
+WRONG tags (false positives) and the rule that fired
+  #  1 human_services     kw "child"                   | PITTSBURGH MUSICAL THEATER             | TO SUPPORT THE STUDENT MATINEE PROGRAM THAT P
+  #  4 health_workforce   kw "scholarship"             | CHIN CHERIE                            | SCHOLARSHIPS TO LEXINGTON YOUTHS
+  #  4 human_services     kw "youth"                   | CHIN CHERIE                            | SCHOLARSHIPS TO LEXINGTON YOUTHS
+  # 16 health_workforce   ntee E300                    | LAHEY CLINIC                           | CHARITABLE CONTRIBUTION
+  # 18 health_workforce   kw "scholarship"             | Boston University                      | Scholarship for Kamelia Barnett
+  # 20 health_workforce   kw "nursing"                 | FORT HUDSON NURSING CENTER INC         | ASSISTIVE TECHNOLOGY
+  # 25 health_workforce   kw "scholarship"             | ALFRED STATE COLLEGE                   | SCHOLARSHIP
+  # 26 health_workforce   kw "scholarship"             | SYDNEY HURD C/O PNC BANK NA            | SCHOLARSHIP
+  # 33 health_workforce   ntee B430                    | MARYWOOD UNIVERSITY                    | STUDENTS TOGETHER ACHIEVING REMARKABLE SUCCES
+  # 35 public_health      ntee G25                     | Value Me Working Hands T21             | Program Support
+  # 40 human_services     kw "child"                   | Blythedale Children's Hospital         | GENERAL SUPPORT
+  # 41 rural_health       ntee E32                     | MALTA HOUSE OF CARE                    | GENERAL USE
+  # 45 health_workforce   kw "scholarship"             | SKIDMORE COLLEGE                       | SCHOLARSHIP
+  # 46 public_health      ntee H20Z                    | FSHD Society                           | General Purpose
+  # 50 health_workforce   ntee B43                     | DREXEL UNIVERSITY                      | RESEARCH, GENERAL SUPPORT & EDUCATION
+  # 53 health_workforce   ntee B430                    | MASSACHUSETTS INSTITUTE OF TECHNOLOGY  | UNRESTRICTED GENERAL
+  # 55 civic_capacity     kw "association"             | HARRISBURG SYMPHONY ASSOCIATION ATTN M | GENERAL OPERATING
+  # 58 health_workforce   kw "scholarship"             | Michael Miskiewicz                     | Scholarship
+  # 59 health_workforce   kw "scholarship"             | ERIC HURTT CO PNC BANK                 | SCHOLARSHIP
+  # 61 health_workforce   kw "scholarship"             | E Slothower                            | Scholarship Grant
+  # 64 health_workforce   kw "scholarship"             | QUEIROZ PONTES DE VARVALHO JOAO        | SCHOLARSHIPS TO LEXINGTON YOUTHS
+  # 64 human_services     kw "youth"                   | QUEIROZ PONTES DE VARVALHO JOAO        | SCHOLARSHIPS TO LEXINGTON YOUTHS
+  # 68 health_workforce   kw "scholarship"             | A Edwards                              | Scholarship Grant
+  # 74 health_workforce   kw "scholarship"             | UNIVERSITY OF VERMONT                  | SCHOLARSHIPS
+  # 76 health_workforce   ntee B430                    | UNIVERSITY OF ROCHESTER                | GENERAL
+  # 77 health_workforce   ntee B430                    | MEMORIAL ART GALLERY AT THE UNIVERSITY | FOR THE WINSLOW HOMER SOCIETY AND GENERAL SUP
+  # 79 rural_health       ntee E21                     | READING HOSPITAL FOUNDATION            | GENERAL OPERATING
+  # 80 agriculture        kw "farm"                    | BLUE CHIP FARM ANIMAL REFUGE           | PROGRAM SERVICES
+  # 87 public_health      ntee G12                     | Eagles Autism Challenge                | General operating
+  # 99 human_services     kw "youth"                   | THE STRONG MUSEUM OF PLAY              | YOUTH PROGRAMMING SUPORT
+  #100 health_workforce   kw "scholarship"             | NICK WITTE C/O PNC BANK                | SCHOLARSHIP
+  #111 health_workforce   kw "scholarship"             | CARNEGIE MELLON U FBO LIAM HOWER STUDE | SCHOLARSHIP
+  #116 human_services     kw "child"                   | SHRINER'S HOSPITAL FOR CHILDREN-ERIE   | GENERAL FUND
+  #121 health_workforce   kw "scholarship"             | Yhan Emid Colon Iban                   | Scholarship
+  #122 agriculture        ntee K30                     | CORTLAND LOAVES AND FISHES             | LIMITED FINANCIAL SUPPORT FOR CHARITABLE PURP
+  #131 health_workforce   kw "scholarship"             | ANNA MCDONALD C/O PNC BANK NA          | SCHOLARSHIP
+  #133 human_services     kw "youth"                   | MEMORIAL ART GALLERY OF THE UNIVERSITY | YOUTH PROGRAMMING SUPPORT
+  #138 health_workforce   kw "scholarship"             | DUQUESNE UNIVERSITY                    | SCHOLARSHIP
+  #143 civic_capacity     kw "association"             | LOWELL DAY NURSERY ASSOCIATION         | GENERAL OPERATING
+  #143 health_workforce   kw "nurse"                   | LOWELL DAY NURSERY ASSOCIATION         | GENERAL OPERATING
+  #147 human_services     kw "youth"                   | TALLER PUERTORRIQUENO YOUTH ARTIST PRO | EDUCATIONAL PROGRAMS
+  #153 health_workforce   ntee E300                    | NORTH SIDE CHRISTIAN HEALTH CENTER     | TO SUPPORT THE MODERNIZATION OF THE ELEVATOR 
+  #154 civic_capacity     ntee S50                     | FOOD BANK FOR NEW YORK CITY            | GENERAL OPERATING SUPPORT
+  #159 human_services     kw "child"                   | BOSTON CHILDREN'S HOSPITAL             | GENERAL
+  #160 health_workforce   kw "training program"        | LIFE NEEDS COOP INC DBA STANTON HOME   | LIFE NEEDS COOP, INC., DBA STANTON HOME SERVE
+  #164 rural_health       ntee E220                    | BETH ISRAEL DEACONESS MEDICAL CENTER   | GENERAL OPERATING
+  #166 human_services     kw "child"                   | ST JUDE CHILDREN'S RESEARCH HOSPITAL   | GENERAL CONTRIBUTION
+  #168 human_services     kw "child"                   | BEVERLY SCHOOL FOR THE DEAF            | TO BENEFIT HANDICAPPED CHILDREN &/RELATED RES
+  #170 human_services     kw "child"                   | FRANCISCAN CHILDREN'S HOSPITAL         | TO BENEFIT HANDICAPPED CHILDREN &/RELATED RES
+  #177 health_workforce   ntee J20                     | CHAVERIM ISRAEL FAMILY SERVICES        | HUMANITARIAN ASSISTANCE
+  #179 rural_health       ntee E220                    | New York Presbyterian Hospital         | Donation
+  #180 health_workforce   kw "training program"        | SHRINERS HOSPITAL FOR CHILDREN         | EDUCATIONAL & TRAINING PROGRAM
+  #180 human_services     kw "child"                   | SHRINERS HOSPITAL FOR CHILDREN         | EDUCATIONAL & TRAINING PROGRAM
+  #182 rural_health       ntee E220                    | NEW ENGLAND BAPTIST HOSPITAL           | GENERAL OPERATING
+  #183 human_services     kw "child"                   | Tufts Children's Hospital              | GENERAL OPERATING
+  #184 public_health      ntee G19                     | CANCER BRIDGES                         | CB-COUNSEL/SUPP/WELLNESS
+  #189 agriculture        kw "farm"                    | AVON OLD FARMS SCHOOL                  | EDUCATIONAL SCHOLARSHIP
+  #189 health_workforce   kw "scholarship"             | AVON OLD FARMS SCHOOL                  | EDUCATIONAL SCHOLARSHIP
+  #190 human_services     kw "child"                   | CHILDREN'S HOSPITAL OF PHILADELPHIA    | CHARITABLE CONTRIBUTION
+  #200 rural_health       ntee E220                    | HARTFORD HOSPITAL                      | FUNDS ARE USED IN HARTFORD HOSPITAL'S CENTER 
+  #201 civic_capacity     kw "coalition"               | Brewster Ponds Coalition               | General Support
+  #202 civic_capacity     kw "policy"                  | CHARTER WORKS INC                      | Using AI in Ways that Enhance Worker Dignity 
+  #204 substance_use      kw "recovery"                | COLUMBIA COUNTY RECOVERY KITCHEN INC   | General & Unrestricted
+  #205 civic_capacity     kw "policy"                  | MOVING PICTURE INSTITUTE               | PUBLIC POLICY
+  #213 agriculture        ntee K30Z                    | CITY HARVEST INC                       | ASSISTANCE TO THE ELDERLY AND THE NEEDY
+  #214 civic_capacity     kw "coalition"               | Coalition Inc                          | To further the charity purpose & mission.
+  #218 health_workforce   kw "workforce"               | Del Cty Workforce Dev Board            | After-school program
+  #221 agriculture        ntee K30Z                    | CITY HARVEST INC                       | TO HELP THE NEEDY
+  #222 human_services     ntee I20                     | EVERYTOWN FOR GUN SAFETY SUPPORT FU    | GUN SAFETY ADVOCACY
+  #223 agriculture        kw "farm"                    | CHALLENGE UNLIMITED AT IRONSTONE FARM  | UNRESTRICTED GENERAL
+  #224 agriculture        kw "farm"                    | Farm & Wilderness Conservation Inc     | GENERAL
+  #230 rural_health       kw "rural"                   | TIOGA COUNTY RURAL MINISTRY            | GENERAL PURPOSES
+  #231 agriculture        kw "farm"                    | WINSLOW FARM ANIMAL AWARENESS CORP C/O | GENERAL OPERATING FUND
+  #236 agriculture        ntee K30Z                    | CITY HARVEST                           | UNRESTRICTED
+  #238 human_services     kw "youth"                   | CORNELL COOPERATIVE EXTENSION          | FARM/YOUTH BUILDING
+  #239 agriculture        kw "farm"                    | FARM & WILDERNESS FOUNDATION           | EDUCATION
+  #240 agriculture        ntee K30Z                    | CITY HARVEST INC                       | GENERAL CHARITABLE OPERATIONS
+
+  FP count by rule:
+     17  health_workforce   kw "scholarship"
+     10  human_services     kw "child"
+      6  human_services     kw "youth"
+      6  agriculture        kw "farm"
+      4  health_workforce   ntee B430
+      4  rural_health       ntee E220
+      4  agriculture        ntee K30Z
+      2  health_workforce   ntee E300
+      2  civic_capacity     kw "association"
+      2  health_workforce   kw "training program"
+      2  civic_capacity     kw "coalition"
+      2  civic_capacity     kw "policy"
+      1  health_workforce   kw "nursing"
+      1  public_health      ntee G25
+      1  rural_health       ntee E32
+      1  public_health      ntee H20Z
+      1  health_workforce   ntee B43
+      1  rural_health       ntee E21
+      1  public_health      ntee G12
+      1  agriculture        ntee K30
+      1  health_workforce   kw "nurse"
+      1  civic_capacity     ntee S50
+      1  health_workforce   ntee J20
+      1  public_health      ntee G19
+      1  substance_use      kw "recovery"
+      1  health_workforce   kw "workforce"
+      1  human_services     ntee I20
+      1  rural_health       kw "rural"
+
+MISSED tags (false negatives)
+  #  3 public_health      ntee=-      | PARTNERS IN HEALTH                       | SUPPORT OF MEDICAL RESEARCH
+  # 14 civic_capacity     ntee=-      | ACLU                                     | Civil Rights
+  # 35 human_services     ntee=G25    | Value Me Working Hands T21               | Program Support
+  # 39 human_services     ntee=-      | AMERICA'S VETDOGS                        | PROGRAM SUPPORT
+  # 41 public_health      ntee=E32    | MALTA HOUSE OF CARE                      | GENERAL USE
+  # 43 human_services     ntee=-      | UNITED WAY OF LONG ISLAND                | EXEMPT ORGANIZATION'S
+  # 65 human_services     ntee=-      | GUIDE DOG FND FOR THE BLIND              | GUIDE DOGS FOR VISUALLY IMPAIRED
+  # 67 human_services     ntee=F300   | Bridge Over Troubled Waters              | General Purpose
+  # 70 public_health      ntee=-      | Doctors Without Borders                  | Donation
+  # 75 agriculture        ntee=T99    | TRELLIS FOR TOMORROW                     | POTTSTOWN SEED SKILLS
+  # 78 human_services     ntee=O23Z   | BOYS AND GIRLS CLUB OF MERCER COUNTY     | GENERAL
+  # 90 human_services     ntee=O230   | BOYS AND GIRLS CLUB OF BOSTON            | GENERAL OPERATING
+  #105 human_services     ntee=-      | THE ARC FOUNDATION OF MONROE             | RAISE AND MANAGE FUNDS TO ENHANCE THE QUALITY OF L
+  #107 civic_capacity     ntee=T20Z   | ACLU Foundation Inc                      | General Purpose
+  #122 human_services     ntee=K30    | CORTLAND LOAVES AND FISHES               | LIMITED FINANCIAL SUPPORT FOR CHARITABLE PURPOSES
+  #135 human_services     ntee=-      | Give Directly Inc                        | GENERAL
+  #137 human_services     ntee=-      | GIRLS EDUCATIONAL AND MENTORING          | GENERAL FUND
+  #139 civic_capacity     ntee=T20Z   | ACLU FOUNDATION                          | CIVIL & SOCIAL JUSTICE
+  #140 human_services     ntee=O220   | Girls Inc                                | Charity
+  #146 human_services     ntee=-      | DAILY TABLE                              | IMPROVE ACCESS TO FRESH, HEALTHY FOOD FOR VULNERAB
+  #146 public_health      ntee=-      | DAILY TABLE                              | IMPROVE ACCESS TO FRESH, HEALTHY FOOD FOR VULNERAB
+  #152 public_health      ntee=E05    | INDEPENDENT HEALTH FOUNDATION            | PROGRAM FUNDING
+  #153 public_health      ntee=E300   | NORTH SIDE CHRISTIAN HEALTH CENTER       | TO SUPPORT THE MODERNIZATION OF THE ELEVATOR AT TH
+  #154 human_services     ntee=S50    | FOOD BANK FOR NEW YORK CITY              | GENERAL OPERATING SUPPORT
+  #157 public_health      ntee=E99    | REGIONAL HEALTH REACH INC                | GENERAL SUPPORT
+  #160 human_services     ntee=-      | LIFE NEEDS COOP INC DBA STANTON HOME     | LIFE NEEDS COOP, INC., DBA STANTON HOME SERVES 27 
+  #165 human_services     ntee=-      | bikor cholim partners in health          | to promote activities of organization
+  #169 human_services     ntee=-      | GINA CAVALLO                             | HARD TIMES FAMILY NECESITY
+  #181 public_health      ntee=-      | GLOBAL HEALTHY LIVING FOUNDATION         | GENERAL PURPOSE
+  #184 behavioral_health  ntee=G19    | CANCER BRIDGES                           | CB-COUNSEL/SUPP/WELLNESS
+  #194 human_services     ntee=-      | JEWISH FEDERATION                        | RELIGIOUS, HEALTH,SOCIAL, COMMUNITY OR EDUCATION
+  #196 human_services     ntee=T50    | JEWISH FAMILY SERVICE                    | PROGRAM SERVICES
+  #200 health_workforce   ntee=E220   | HARTFORD HOSPITAL                        | FUNDS ARE USED IN HARTFORD HOSPITAL'S CENTER FOR E
+  #203 human_services     ntee=-      | CARROLL REHABILITATI CENTRE              | GENERAL OPERATING
+  #213 human_services     ntee=K30Z   | CITY HARVEST INC                         | ASSISTANCE TO THE ELDERLY AND THE NEEDY
+  #218 human_services     ntee=-      | Del Cty Workforce Dev Board              | After-school program
+  #221 human_services     ntee=K30Z   | CITY HARVEST INC                         | TO HELP THE NEEDY
+  #223 human_services     ntee=-      | CHALLENGE UNLIMITED AT IRONSTONE FARM    | UNRESTRICTED GENERAL
+  #228 behavioral_health  ntee=-      | NATIONAL ALLIANCE ON MENTAL ILLNESS OF N | UNRESTRICTED GRANT FOR DONEE'S EXEMPT PURPOSE
+  #229 human_services     ntee=-      | CITYHARVEST (NYC)                        | GENERAL CHARITABLE
+  #230 human_services     ntee=-      | TIOGA COUNTY RURAL MINISTRY              | GENERAL PURPOSES
+  #234 behavioral_health  ntee=-      | Massachusetts Medical Society            | Physician Health Services
+  #234 health_workforce   ntee=-      | Massachusetts Medical Society            | Physician Health Services
+  #235 substance_use      ntee=-      | MONTVILLE TWP DRUG AWARENESS COUNCIL     | CHARITABLE PURPOSE
+  #236 human_services     ntee=K30Z   | CITY HARVEST                             | UNRESTRICTED
+  #240 human_services     ntee=K30Z   | CITY HARVEST INC                         | GENERAL CHARITABLE OPERATIONS
+
+is_vague() checks
+  Lines whose purpose is boilerplate (gold): 149
+  (a) boilerplate purpose + no real theme, but tagger added a theme: 25/103
+      # 16 ['health_workforce'] | LAHEY CLINIC | CHARITABLE CONTRIBUTION
+      # 40 ['human_services'] | Blythedale Children's Hospital | GENERAL SUPPORT
+      # 46 ['public_health'] | FSHD Society | General Purpose
+      # 50 ['health_workforce'] | DREXEL UNIVERSITY | RESEARCH, GENERAL SUPPORT & EDUCATION
+      # 53 ['health_workforce'] | MASSACHUSETTS INSTITUTE OF TECHNOLOGY | UNRESTRICTED GENERAL
+      # 55 ['civic_capacity'] | HARRISBURG SYMPHONY ASSOCIATION ATTN MAT | GENERAL OPERATING
+      # 76 ['health_workforce'] | UNIVERSITY OF ROCHESTER | GENERAL
+      # 77 ['health_workforce'] | MEMORIAL ART GALLERY AT THE UNIVERSITY O | FOR THE WINSLOW HOMER SOCIETY AND GENERA
+      # 79 ['rural_health'] | READING HOSPITAL FOUNDATION | GENERAL OPERATING
+      # 80 ['agriculture'] | BLUE CHIP FARM ANIMAL REFUGE | PROGRAM SERVICES
+      # 87 ['public_health'] | Eagles Autism Challenge | General operating
+      #116 ['human_services'] | SHRINER'S HOSPITAL FOR CHILDREN-ERIE | GENERAL FUND
+      #143 ['civic_capacity', 'health_workforce'] | LOWELL DAY NURSERY ASSOCIATION | GENERAL OPERATING
+      #159 ['human_services'] | BOSTON CHILDREN'S HOSPITAL | GENERAL
+      #164 ['rural_health'] | BETH ISRAEL DEACONESS MEDICAL CENTER | GENERAL OPERATING
+      #166 ['human_services'] | ST JUDE CHILDREN'S RESEARCH HOSPITAL | GENERAL CONTRIBUTION
+      #179 ['rural_health'] | New York Presbyterian Hospital | Donation
+      #180 ['health_workforce', 'human_services'] | SHRINERS HOSPITAL FOR CHILDREN | EDUCATIONAL & TRAINING PROGRAM
+      #182 ['rural_health'] | NEW ENGLAND BAPTIST HOSPITAL | GENERAL OPERATING
+      #183 ['human_services'] | Tufts Children's Hospital | GENERAL OPERATING
+      #190 ['human_services'] | CHILDREN'S HOSPITAL OF PHILADELPHIA | CHARITABLE CONTRIBUTION
+      #201 ['civic_capacity'] | Brewster Ponds Coalition | General Support
+      #214 ['civic_capacity'] | Coalition Inc | To further the charity purpose & mission
+      #224 ['agriculture'] | Farm & Wilderness Conservation Inc | GENERAL
+      #231 ['agriculture'] | WINSLOW FARM ANIMAL AWARENESS CORP C/O D | GENERAL OPERATING FUND
+  (b) boilerplate purpose, no theme, no NTEE -> should be vague (0.25): 41/61 are; NOT vague (scored 0 instead):
+      #  7 "TO AID THE DONEE ORGANIZATION IN CARRYING OUT ITS EXEMPT FUN"
+      # 12 "GENERAL"
+      # 15 "DONATION"
+      # 27 "FACILITATEFUNCTION OF CHARITY"
+      # 42 "OPERATIONS"
+      # 49 "to promote activities of organization"
+      # 51 "TO AID THE DONEE ORGANIZATION IN CARRYING OUT ITS EXEMPT FUN"
+      # 62 "SEE STATEMENT #13"
+      # 72 "ANNUAL OPERATING FUND"
+      # 82 "ASSIST PUBLIC CHARITIES"
+      # 84 "Contribution to the Big 33 Organization"
+      # 88 "FACILITATEFUNCTION OF CHARITY"
+      # 93 "GENERAL FUND"
+      #102 "SEE STATEMENT #13"
+      #106 "For Operating Funds"
+      #113 "GENERAL"
+      #120 "PURPOSE DESIGNATED BY THE RECIPIENT"
+      #123 "General Use"
+      #130 "EXEMPT ORGANIZATION'S"
+      #191 "RELIGIOUS, HEALTH,SOCIAL, COMMUNITY OR EDUCATION"
+  (c) real-theme lines that fell through as vague: 6/83
+      # 39 ['human_services'] | AMERICA'S VETDOGS | PROGRAM SUPPORT
+      #181 ['public_health'] | GLOBAL HEALTHY LIVING FOUNDATION | GENERAL PURPOSE
+      #203 ['human_services'] | CARROLL REHABILITATI CENTRE | GENERAL OPERATING
+      #228 ['behavioral_health'] | NATIONAL ALLIANCE ON MENTAL ILLNESS OF N | UNRESTRICTED GRANT FOR DONEE'S EXEMPT PU
+      #229 ['human_services'] | CITYHARVEST (NYC) | GENERAL CHARITABLE
+      #235 ['substance_use'] | MONTVILLE TWP DRUG AWARENESS COUNCIL | CHARITABLE PURPOSE
+  (d) specific (non-boilerplate) purpose judged vague: 0

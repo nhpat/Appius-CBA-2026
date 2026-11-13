@@ -1,0 +1,94 @@
+Taxonomy: config/taxonomy.yaml
+Lines: 240 (Counter({'random': 140, 'enriched': 60, 'targeted': 40}))
+
+Per-theme precision / recall (all strata | random stratum only)
+theme                gold  tp  fp  fn  prec   rec  | gold  prec   rec
+public_health           8   4   1   4  0.80  0.50  |    3  1.00  0.33
+health_workforce        3   1   0   2  1.00  0.33  |    1   -    0.00
+behavioral_health       8   6   0   2  1.00  0.75  |    2  1.00  1.00
+substance_use           1   1   0   0  1.00  1.00  |    0   -     -  
+rural_health            0   0   0   0   -     -    |    0   -     -  
+agriculture             8   7   4   1  0.64  0.88  |    1   -    0.00
+human_services         54  40   9  14  0.82  0.74  |   19  0.72  0.68
+civic_capacity          6   6   5   0  0.55  1.00  |    4  1.00  1.00
+micro (all themes)     88  65  19  23  0.77  0.74
+Lines where predicted theme set == gold set: 199/240
+
+WRONG tags (false positives) and the rule that fired
+  #  1 human_services     kw "child"                   | PITTSBURGH MUSICAL THEATER             | TO SUPPORT THE STUDENT MATINEE PROGRAM THAT P
+  #  4 human_services     kw "youth"                   | CHIN CHERIE                            | SCHOLARSHIPS TO LEXINGTON YOUTHS
+  # 64 human_services     kw "youth"                   | QUEIROZ PONTES DE VARVALHO JOAO        | SCHOLARSHIPS TO LEXINGTON YOUTHS
+  # 99 human_services     kw "youth"                   | THE STRONG MUSEUM OF PLAY              | YOUTH PROGRAMMING SUPORT
+  #133 human_services     kw "youth"                   | MEMORIAL ART GALLERY OF THE UNIVERSITY | YOUTH PROGRAMMING SUPPORT
+  #147 human_services     kw "youth"                   | TALLER PUERTORRIQUENO YOUTH ARTIST PRO | EDUCATIONAL PROGRAMS
+  #154 civic_capacity     ntee S50                     | FOOD BANK FOR NEW YORK CITY            | GENERAL OPERATING SUPPORT
+  #168 human_services     kw "child"                   | BEVERLY SCHOOL FOR THE DEAF            | TO BENEFIT HANDICAPPED CHILDREN &/RELATED RES
+  #170 human_services     kw "child"                   | FRANCISCAN CHILDREN'S HOSPITAL         | TO BENEFIT HANDICAPPED CHILDREN &/RELATED RES
+  #189 agriculture        kw "farms"                   | AVON OLD FARMS SCHOOL                  | EDUCATIONAL SCHOLARSHIP
+  #201 civic_capacity     kw "coalition"               | Brewster Ponds Coalition               | General Support
+  #202 civic_capacity     kw "policy"                  | CHARTER WORKS INC                      | Using AI in Ways that Enhance Worker Dignity 
+  #205 civic_capacity     kw "policy"                  | MOVING PICTURE INSTITUTE               | PUBLIC POLICY
+  #214 civic_capacity     kw "coalition"               | Coalition Inc                          | To further the charity purpose & mission.
+  #223 agriculture        kw "farm"                    | CHALLENGE UNLIMITED AT IRONSTONE FARM  | UNRESTRICTED GENERAL
+  #224 agriculture        kw "farm"                    | Farm & Wilderness Conservation Inc     | GENERAL
+  #233 public_health      kw "healthy food"            | YOUTH FARM PROJECT INC                 | IMPROVE ACCESS TO FRESH, HEALTHY FOOD FOR VUL
+  #238 human_services     kw "youth"                   | CORNELL COOPERATIVE EXTENSION          | FARM/YOUTH BUILDING
+  #239 agriculture        kw "farm"                    | FARM & WILDERNESS FOUNDATION           | EDUCATION
+
+  FP count by rule:
+      6  human_services     kw "youth"
+      3  human_services     kw "child"
+      3  agriculture        kw "farm"
+      2  civic_capacity     kw "coalition"
+      2  civic_capacity     kw "policy"
+      1  civic_capacity     ntee S50
+      1  agriculture        kw "farms"
+      1  public_health      kw "healthy food"
+
+MISSED tags (false negatives)
+  #  3 public_health      ntee=-      | PARTNERS IN HEALTH                       | SUPPORT OF MEDICAL RESEARCH
+  # 35 human_services     ntee=G25    | Value Me Working Hands T21               | Program Support
+  # 36 health_workforce   ntee=-      | Upstate Medical University               | Scholarship for Brooke Campbell
+  # 39 human_services     ntee=-      | AMERICA'S VETDOGS                        | PROGRAM SUPPORT
+  # 67 human_services     ntee=F300   | Bridge Over Troubled Waters              | General Purpose
+  # 70 public_health      ntee=-      | Doctors Without Borders                  | Donation
+  # 75 agriculture        ntee=T99    | TRELLIS FOR TOMORROW                     | POTTSTOWN SEED SKILLS
+  #105 human_services     ntee=-      | THE ARC FOUNDATION OF MONROE             | RAISE AND MANAGE FUNDS TO ENHANCE THE QUALITY OF L
+  #135 human_services     ntee=-      | Give Directly Inc                        | GENERAL
+  #137 human_services     ntee=-      | GIRLS EDUCATIONAL AND MENTORING          | GENERAL FUND
+  #146 human_services     ntee=-      | DAILY TABLE                              | IMPROVE ACCESS TO FRESH, HEALTHY FOOD FOR VULNERAB
+  #152 public_health      ntee=E05    | INDEPENDENT HEALTH FOUNDATION            | PROGRAM FUNDING
+  #157 public_health      ntee=E99    | REGIONAL HEALTH REACH INC                | GENERAL SUPPORT
+  #165 human_services     ntee=-      | bikor cholim partners in health          | to promote activities of organization
+  #169 human_services     ntee=-      | GINA CAVALLO                             | HARD TIMES FAMILY NECESITY
+  #184 behavioral_health  ntee=G19    | CANCER BRIDGES                           | CB-COUNSEL/SUPP/WELLNESS
+  #200 health_workforce   ntee=E220   | HARTFORD HOSPITAL                        | FUNDS ARE USED IN HARTFORD HOSPITAL'S CENTER FOR E
+  #203 human_services     ntee=-      | CARROLL REHABILITATI CENTRE              | GENERAL OPERATING
+  #218 human_services     ntee=-      | Del Cty Workforce Dev Board              | After-school program
+  #223 human_services     ntee=-      | CHALLENGE UNLIMITED AT IRONSTONE FARM    | UNRESTRICTED GENERAL
+  #229 human_services     ntee=-      | CITYHARVEST (NYC)                        | GENERAL CHARITABLE
+  #230 human_services     ntee=-      | TIOGA COUNTY RURAL MINISTRY              | GENERAL PURPOSES
+  #234 behavioral_health  ntee=-      | Massachusetts Medical Society            | Physician Health Services
+
+is_vague() checks
+  Lines whose purpose is boilerplate (gold): 149
+  (a) boilerplate purpose + no real theme, but tagger added a theme: 3/103
+      #201 ['civic_capacity'] | Brewster Ponds Coalition | General Support
+      #214 ['civic_capacity'] | Coalition Inc | To further the charity purpose & mission
+      #224 ['agriculture'] | Farm & Wilderness Conservation Inc | GENERAL
+  (b) boilerplate purpose, no theme, no NTEE -> should be vague (0.25): 56/61 are; NOT vague (scored 0 instead):
+      #  7 "TO AID THE DONEE ORGANIZATION IN CARRYING OUT ITS EXEMPT FUN"
+      # 51 "TO AID THE DONEE ORGANIZATION IN CARRYING OUT ITS EXEMPT FUN"
+      # 84 "Contribution to the Big 33 Organization"
+      #180 "EDUCATIONAL & TRAINING PROGRAM"
+      #191 "RELIGIOUS, HEALTH,SOCIAL, COMMUNITY OR EDUCATION"
+  (c) real-theme lines that fell through as vague: 8/83
+      # 39 ['human_services'] | AMERICA'S VETDOGS | PROGRAM SUPPORT
+      # 70 ['public_health'] | Doctors Without Borders | Donation
+      #135 ['human_services'] | Give Directly Inc | GENERAL
+      #137 ['human_services'] | GIRLS EDUCATIONAL AND MENTORING | GENERAL FUND
+      #165 ['human_services'] | bikor cholim partners in health | to promote activities of organization
+      #203 ['human_services'] | CARROLL REHABILITATI CENTRE | GENERAL OPERATING
+      #229 ['human_services'] | CITYHARVEST (NYC) | GENERAL CHARITABLE
+      #230 ['human_services'] | TIOGA COUNTY RURAL MINISTRY | GENERAL PURPOSES
+  (d) specific (non-boilerplate) purpose judged vague: 0
