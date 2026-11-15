@@ -2,6 +2,8 @@
 
 The full evidence is in [FINDINGS.md](FINDINGS.md). This page explains it for someone who hasn't seen the code.
 
+**Update, 2026-11-13:** re-checked against the current codebase after the theme-taxonomy rewrite landed. The update-command crash and the silent-junk-on-empty-database bug (both described below) are now fixed. The column-labeling issue is also fixed. Everything else below — the flag legend, the data-coverage warning, the Park/Spark false match, the lobbying keyword bug, and the mission-gate pattern — is still present in the current reports; the mission-gate numbers were re-measured and have shifted slightly (see FINDINGS.md) but the underlying problem is unchanged.
+
 ## What the tool does
 Foundations file an IRS tax form every year that lists every grant they gave. The tool reads those forms and scores each foundation from 0 to 100 on how well it fits a client (NYSPHA or Appius). It then writes a ranked Excel spreadsheet: Tier A means pursue now, B means research further, C means keep on file, and Watch is a long shot.
 
