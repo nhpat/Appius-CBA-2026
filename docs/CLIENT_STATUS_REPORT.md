@@ -124,5 +124,4 @@ the multi-step download process individually.
 The infrastructure went from "can't be handed off" to "runs end to end and is
 documented" this cycle. Model trustworthiness improved meaningfully (taxonomy accuracy
 roughly doubled) but isn't finished, and two of the three open decisions above
-(mission-as-gate, how much data before acting) are genuinely yours to make, not something
-more engineering time resolves on its own.
+(mission-as-gate, how much data before acting).
